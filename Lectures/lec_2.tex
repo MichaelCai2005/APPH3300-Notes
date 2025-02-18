@@ -1,0 +1,153 @@
+\chapter{Overview of EM}
+\lecture{2}{Jan 27 10:10}{}
+
+\begin{remark}
+    Differential Calculus: Gradient, Divergence 
+
+    \begin{definition}
+        Del operator
+
+        \[
+            \nabla = i_x \frac{\partial }{\partial x} + i_y \frac{\partial }{\partial y}  
+            + i_z\frac{\partial }{\partial z} 
+        \]
+        The del operator alone is meaningless, however when used with scalar or vector fields,
+        it gives rise to interesting concepts
+    \end{definition}
+
+    \begin{definition}
+        We define Divergence as 
+    \[
+        \nabla \cdot \vec{A} = \frac{\partial A_x}{\partial x} + \frac{\partial A_y}{\partial y}
+        + \frac{\partial A_z}{\partial z} = 
+        \sum_{i}^n \frac{\partial f(\vec{A} )}{\partial A_i}  \vec{e_i} 
+    \]
+    For a given divergence, we define the flux of a vector field. We define a surface with area 
+    \(dx, dy\) with normal vector \(\hat{n}\). The flux differential is defined to be 
+    \[
+        d \phi  = \hat{n}  \cdot \vec{A} \mathrm{d}x  \mathrm{d}y    
+    \]  
+    For a large surface, the flux is defined to be 
+    \[
+        \phi  = \int d \phi  = \int  \vec{A}  \cdot \hat{n}  ds
+    \]
+        
+    \end{definition}
+
+    From here we get Gauss's divergence theorem (Green's Theorem)
+    \[
+        \oint  \vec{A}  \cdot \hat{n} ds = \int_V (\nabla \cdot \vec{A} ) dV 
+    \]
+    Given a uniform vector field, the flux is 0.
+    Next we define the curl of the vector with is 
+    \[
+        {\nabla} \times \vec{A} 
+    \]
+    which defined how much the vector "swirls" around points. THe circulation of a field is denoted as 
+    \[
+        C= \oint \vec{A} \cdot d \vec{l}  
+    \]
+    We will get the between the curl and the circulation to be Stoke's Theorem
+    \[
+        \oint \vec{A} \cdot d\vec{l} = \int _s (\nabla \times A ) \cdot \vec{n} dS
+    \]
+\end{remark}
+
+\begin{remark}
+    Second Order Derivatives: scalar fields and vector fields
+
+    Gradient \( \vec{\nabla } f\) which is vector. We can apply the del operator again with the dot product
+    or the cross product which are two ways. For the divergence \(\vec{\nabla  } \cdot \vec{A}\) is 
+    applying the del operator again \(\vec{\nabla } (\nabla A)\). For the curl, we have two combinations that are the same
+    as the gradient. Thus, there are 5 second order derivatives\dots
+
+    \begin{definition}
+        \[
+            \nabla  \cdot (\nabla f) = \sum_{i}^n \frac{\partial ^{2} }{\partial x_i ^{2}   } f = \nabla ^{2} f
+        \]
+        which is also defined as the laplacian
+    \end{definition}
+
+    \begin{definition}
+        \[
+            \nabla \times (\nabla  f) = (\frac{\partial ^{2} }{\partial y z} - \frac{\partial ^{2} }{\partial z,y} ) \hat{x}
+            + (\frac{\partial ^{2} }{\partial z, x} - \frac{\partial ^{2} }{\partial x, z} ) \hat{y}
+            + (\frac{\partial ^{2} }{\partial x,y} - \frac{\partial ^{2} }{\partial y,x} ) \hat{z} = 0
+        \]
+    \end{definition}
+    \begin{definition}
+        \[
+            \nabla (\nabla  \cdot A) 
+        \]
+    \end{definition}
+    \begin{definition}
+        \[
+            \nabla  \cdot (\nabla \times A ) = 0
+        \]
+    \end{definition}
+    \begin{definition}
+        \[
+            \nabla \times (\nabla \times A) = \nabla (\nabla  \cdot A) - \nabla ^{2} A
+        \]
+    \end{definition}
+\end{remark}
+
+\begin{remark}
+    Curvilinear Coordinates:
+    
+    There exists curvilinear coordinates which are useful in projection in orthoganal directions in 3D. 
+    \begin{eg}
+        The use of spherical and cylindrical coordinates are important for point charges, conducting wires, calculating the flux
+        for certain special objects and planes, and other important objects. Spherical coordinates are useful in certain
+        descriptions such as that of a point charge.
+    \end{eg}
+
+    \begin{definition}
+        Spherical Coordinates:
+
+        Suppose we had a point \(p\) in spherical coordinates with coordinates \((r,\phi ,\theta )\) 
+        where the ranges are going to be 
+        \[
+            0 \leq  r \leq  \infty
+        \]
+        \[
+            0 \leq  \phi  \leq  2\pi 
+        \]
+        \[
+            0 \leq  \theta  \leq  \pi 
+        \]
+        where \(\phi \) represents the movement in the x-y plane and \(\theta \) represents rotation on the z-y plane. 
+        The unit vectors are going to follow in the same planes. The conversion is as follows for cartesian to spherical
+
+        \[
+            x = r \cos \phi \sin \theta, 
+            y = r \sin  \phi \sin \theta, 
+            z = r \cos \theta 
+        \]
+        The infintisemal displacement will be 
+        \[
+            d\hat{l} = dr \hat{r} + r d\theta \hat{\theta } + r \sin  \phi d \phi \hat{\phi }
+        \]
+        For a small volume, we have 
+        \[
+            dV = r^{2}  \sin \theta  dr d \phi  d \theta , (dxdydz)
+        \]
+    \end{definition}
+
+    \begin{definition}
+        Cylindrical Coordinates \((r,\phi ,z)\) 
+        \[
+            0 \leq  r \leq  \infty , 
+            0 \leq  \phi  \leq  2\pi , 
+            - \infty \leq  z \leq  \infty
+        \]
+        intnfintisemal displacement:
+        \[
+             d\hat{l} = dr \hat{r} + dz \hat{z} + r d \phi  \hat{\phi }
+        \]
+        Volume:
+        \[
+            dV = r dr d \phi  dz
+        \]
+    \end{definition}
+\end{remark}

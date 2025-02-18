@@ -1,0 +1,4 @@
+\contentsline {chapter}{\numberline {1}Overview of EM}{2}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Overview of EM}{3}{chapter.2}%
+\contentsline {paragraph}{Trapped Ions}{16}{section*.11}%
+\contentsline {paragraph}{Electrostatics for atoms, molecules, molecules, and crystals}{17}{section*.12}%
